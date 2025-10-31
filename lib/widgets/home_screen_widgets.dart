@@ -2,64 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../utils/constants.dart';
-import 'forstes_effect_widget.dart';
+import 'forsted_effect_widget.dart';
 import 'product_title_widget.dart';
 
 Widget priceDisplayWidget({required String price}) {
-  return Container(
-    height: 50,
-    padding: EdgeInsets.symmetric(horizontal: 17, vertical: 12),
-    decoration: BoxDecoration(
-      color: Colors.white.withValues(alpha: 0.17),
-      borderRadius: BorderRadius.circular(26),
-      border: Border.all(
-        width: 1,
-        color: Colors.white.withValues(alpha: 0.17),
-      ),
-    ),
-    child: Center(
-      child: Text(
-        "\$$price",
-        style: TextStyle(
-          color: Colors.white.withValues(alpha: 0.7),
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-        ),
+  return Center(
+    child: Text(
+      "\$$price",
+      style: TextStyle(
+        color: Colors.white.withValues(alpha: 0.7),
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
       ),
     ),
   );
 }
 
 Widget iconDisplayWidget({required IconData iconData}) {
-  return Container(
-    height: 50,
-    width: 50,
-    decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.17),
-        borderRadius: BorderRadius.circular(26),
-        border: Border.all(
-          width: 1,
-          color: Colors.white.withValues(alpha: 0.17),
-        )),
-    child: IconButton(
-      onPressed: () {},
-      icon: Icon(
-        iconData,
-        color: Colors.white.withValues(alpha: 0.5),
-      ),
+  return IconButton(
+    onPressed: () {},
+    icon: Icon(
+      iconData,
+      color: Colors.white.withValues(alpha: 0.5),
     ),
   );
 }
 
-Widget collaborationWidget() {
+Widget collaborationWidget({required size}) {
   return Stack(
     children: [
       Container(
         margin: const EdgeInsets.all(14.0),
-        height: 280,
+        height: size.height * 0.32,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: Colors.brown,
+          // color: Colors.brown,
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -80,7 +57,9 @@ Widget collaborationWidget() {
             itemCount: 4,
             itemBuilder: (context, index) {
               return Container(
-                height: (index % 2 == 0) ? 230 : 50, // variable height
+                height: (index % 2 == 0)
+                    ? size.height * 0.270
+                    : size.height * 0.059, // variable height
                 decoration: BoxDecoration(
                   // borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
@@ -141,10 +120,14 @@ Container extraTshirtWidget(int index) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FrostedEffectWidget(
+              height: 40,
+              padding: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
               child: priceDisplayWidget(price: "299"),
             ),
             SizedBox(width: 6),
             FrostedEffectWidget(
+              height: 40,
+              width: 40,
               child: iconDisplayWidget(iconData: Icons.favorite),
             ),
           ],

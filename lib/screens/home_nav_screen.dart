@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'cart_screen.dart';
 import 'home_screen.dart';
+import 'profile_screen.dart';
 
 class HomeNavScreen extends StatefulWidget {
   const HomeNavScreen({super.key});
@@ -16,7 +17,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   final List<Widget> widgetOptions = [
     HomeScreen(),
     CartScreen(),
-    Container(color: Colors.greenAccent),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,6 +29,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,

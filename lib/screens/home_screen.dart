@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:fashion_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/forstes_effect_widget.dart';
+import '../widgets/forsted_effect_widget.dart';
 import '../widgets/home_screen_widgets.dart';
 import '../widgets/product_title_widget.dart';
 
@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Stack(
       children: [
         Scaffold(
@@ -99,16 +100,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: 500,
+                height: size.height * 0.589,
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 150,
+                      top: size.height * 0.183,
                       left: 55,
                       right: 55,
                       child: Container(
-                        height: 340,
-                        width: MediaQuery.of(context).size.width,
+                        height: size.height * 0.399,
+                        width: size.width,
                         padding: EdgeInsets.symmetric(horizontal: 55),
                         decoration: BoxDecoration(
                           color: Color(0xffEBF2F4),
@@ -118,12 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Positioned(
-                      top: 92,
-                      left: 32,
-                      right: 32,
+                      top: size.height * 0.109,
+                      left: 30,
+                      right: 30,
                       child: Container(
-                        height: 392,
-                        width: MediaQuery.of(context).size.width,
+                        height: size.height * 0.460,
+                        width: size.width,
                         padding: EdgeInsets.symmetric(horizontal: 32),
                         decoration: BoxDecoration(
                           color: Color(0xffCFE1E7),
@@ -133,24 +134,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Positioned(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 14),
-                        height: 460,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(37),
-                        ),
-                        margin: EdgeInsets.only(top: 16),
+                      left: 14,
+                      right: 14,
+                      top: 16,
+                      child: SizedBox(
+                        height: size.height * 0.539,
                         child: Stack(
                           children: [
                             Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(37),
                                 image: DecorationImage(
-                                  fit: BoxFit
-                                      .fitWidth, // Adjust fit as needed (e.g., BoxFit.fill, BoxFit.contain)
-                                  image: AssetImage('assets/images/image5.png'),
-                                  // Or:
-                                  // image: NetworkImage('https://example.com/your_image.jpg'),
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                    'assets/images/image5.png',
+                                  ),
                                 ),
                               ),
                             ),
@@ -179,11 +177,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Row(
                                     children: [
                                       FrostedEffectWidget(
+                                        height: 40,
+                                        // width: 40,
                                         child: iconDisplayWidget(
                                             iconData: Icons.favorite),
                                       ),
                                       SizedBox(width: 6),
                                       FrostedEffectWidget(
+                                        height: 40,
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 17, vertical: 8),
                                         child: priceDisplayWidget(price: "240"),
                                       ),
                                     ],
@@ -224,12 +227,12 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 22),
                 child: TitleWidget(
-                  title: "Elegance T-Shirt",
+                  title: "Collaboration",
                   style: headingTitleTextStyle,
                 ),
               ),
               SizedBox(height: 10),
-              collaborationWidget(),
+              collaborationWidget(size: size),
               SizedBox(height: 30),
             ],
           ),
@@ -243,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                   child: Container(
-                    height: 490,
+                    height: size.height * 0.575,
                     decoration: BoxDecoration(
                         color: Colors.purpleAccent,
                         borderRadius: BorderRadius.circular(37)),
