@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../models/product_model.dart';
 import '../utils/constants.dart';
 import 'forsted_effect_widget.dart';
 import 'product_title_widget.dart';
@@ -10,7 +11,7 @@ Widget priceDisplayWidget({required String price}) {
     child: Text(
       "\$$price",
       style: TextStyle(
-        color: Colors.white.withValues(alpha: 0.7),
+        color: Colors.white,
         fontSize: 14,
         fontWeight: FontWeight.w600,
       ),
@@ -88,49 +89,53 @@ Widget collaborationWidget({required size}) {
   );
 }
 
-Container extraTshirtWidget(int index) {
+Container extraTshirtWidget(
+    {required int index, required ProductModel product}) {
   return Container(
-    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 26),
+    padding: EdgeInsets.only(left: 15, right: 10, bottom: 26, top: 26),
     height: 260,
     decoration: BoxDecoration(
       image: DecorationImage(
         fit: BoxFit.fitHeight,
-        image: AssetImage('assets/images/image${index + 1}.png'),
+        image: AssetImage(product.productImage),
       ),
       borderRadius: BorderRadius.circular(30),
     ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TitleWidget(
-              title: "Flex Shirt Cream",
+              title: product.productName,
               style: productTitleTextStyle,
             ),
             TitleWidget(
-              title: "T-shirt",
+              title: getCategoryById(product.categories).name,
               style: productSubTitleTextStyle,
             ),
           ],
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FrostedEffectWidget(
-              height: 40,
-              padding: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
-              child: priceDisplayWidget(price: "299"),
-            ),
-            SizedBox(width: 6),
-            FrostedEffectWidget(
-              height: 40,
-              width: 40,
-              child: iconDisplayWidget(iconData: Icons.favorite),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FrostedEffectWidget(
+                height: 40,
+                padding: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+                child: priceDisplayWidget(price: product.price),
+              ),
+              SizedBox(width: 6),
+              FrostedEffectWidget(
+                height: 40,
+                width: 40,
+                child: iconDisplayWidget(iconData: Icons.favorite),
+              ),
+            ],
+          ),
         )
       ],
     ),
