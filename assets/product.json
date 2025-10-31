@@ -1,0 +1,128 @@
+[
+    {
+        "productName": "Classic Black Hoodie",
+        "categories": "hoodie",
+        "price": "1200",
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productImage": "assets/images/image1.png"
+    },
+    {
+        "productName": "Cozy Knit Sweater",
+        "categories": "sweater",
+        "price": "1500",
+        "productDescription": "Warm and stylish sweater perfect for cold weather.",
+        "productImage": "assets/images/image2.png"
+    },
+    {
+        "productName": "Graphic T-Shirt",
+        "categories": "tshirt",
+        "price": "800",
+        "productDescription": "Soft cotton t-shirt featuring a trendy graphic design.",
+        "productImage": "assets/images/image3.png"
+    },
+    {
+        "productName": "Classic Baseball Hat",
+        "categories": "hat",
+        "price": "600",
+        "productDescription": "Adjustable cotton hat ideal for casual outings.",
+        "productImage": "assets/images/image4.png"
+    },
+    {
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": "2000",
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image5.png"
+    },
+    {
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": "2000",
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png"
+    },
+    {
+        "productName": "Classic Black Hoodie",
+        "categories": "hoodie",
+        "price": "1200",
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productImage": "assets/images/image1.png"
+    },
+    {
+        "productName": "Cozy Knit Sweater",
+        "categories": "sweater",
+        "price": "1500",
+        "productDescription": "Warm and stylish sweater perfect for cold weather.",
+        "productImage": "assets/images/image2.png"
+    },
+    {
+        "productName": "Graphic T-Shirt",
+        "categories": "tshirt",
+        "price": "800",
+        "productDescription": "Soft cotton t-shirt featuring a trendy graphic design.",
+        "productImage": "assets/images/image3.png"
+    },
+    {
+        "productName": "Classic Baseball Hat",
+        "categories": "hat",
+        "price": "600",
+        "productDescription": "Adjustable cotton hat ideal for casual outings.",
+        "productImage": "assets/images/image4.png"
+    },
+    {
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": "2000",
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image5.png"
+    },
+    {
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": "2000",
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png"
+    },
+    {
+        "productName": "Classic Black Hoodie",
+        "categories": "hoodie",
+        "price": "1200",
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productImage": "assets/images/image1.png"
+    },
+    {
+        "productName": "Cozy Knit Sweater",
+        "categories": "sweater",
+        "price": "1500",
+        "productDescription": "Warm and stylish sweater perfect for cold weather.",
+        "productImage": "assets/images/image2.png"
+    },
+    {
+        "productName": "Graphic T-Shirt",
+        "categories": "tshirt",
+        "price": "800",
+        "productDescription": "Soft cotton t-shirt featuring a trendy graphic design.",
+        "productImage": "assets/images/image3.png"
+    },
+    {
+        "productName": "Classic Baseball Hat",
+        "categories": "hat",
+        "price": "600",
+        "productDescription": "Adjustable cotton hat ideal for casual outings.",
+        "productImage": "assets/images/image4.png"
+    },
+    {
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": "2000",
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image5.png"
+    },
+    {
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": "2000",
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png"
+    }
+]
