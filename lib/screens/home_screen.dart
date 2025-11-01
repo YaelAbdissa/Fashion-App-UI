@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String selectedCategory = "all";
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -22,6 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
         future: loadProducts(),
         builder: (context, snapShot) {
           final products = snapShot.data ?? [];
+          final productsByCategory =
+              getProoductsByCategory(selectedCategory, products);
           return Stack(
             children: [
               Scaffold(
@@ -84,8 +87,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ? 18
                                     : 9),
                             child: categoriesWidget(
-                              isSelected: index == 0 ? true : false,
-                              title: productCategories[index].name,
+                              isSelected: productCategories[index].id ==
+                                      selectedCategory
+                                  ? true
+                                  : false,
+                              category: productCategories[index],
                             ),
                           );
                         },
@@ -212,9 +218,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       childAspectRatio: 0.678,
-                      children: List.generate(products.length, (index) {
+                      children: List.generate(
+                          selectedCategory == "all"
+                              ? products.length
+                              : productsByCategory.length, (index) {
                         return extraTshirtWidget(
-                            index: index, product: products[index]);
+                            index: index,
+                            product: selectedCategory == "all"
+                                ? products[index]
+                                : productsByCategory[index]);
                       }),
                     ),
                     SizedBox(height: 20),
@@ -253,20 +265,27 @@ class _HomeScreenState extends State<HomeScreen> {
         });
   }
 
-  Container categoriesWidget(
-      {required bool isSelected, required String title}) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      decoration: BoxDecoration(
-        color: isSelected ? Colors.black : Color(0xffEBF2F4),
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: Center(
-        child: Text(
-          title,
-          style: TextStyle(
-            fontSize: 14,
-            color: isSelected ? Colors.white : Colors.black,
+  Widget categoriesWidget(
+      {required bool isSelected, required ProductCategory category}) {
+    return GestureDetector(
+      onTap: () => {
+        setState(() {
+          selectedCategory = category.id;
+        })
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.black : Color(0xffEBF2F4),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Center(
+          child: Text(
+            category.name,
+            style: TextStyle(
+              fontSize: 14,
+              color: isSelected ? Colors.white : Colors.black,
+            ),
           ),
         ),
       ),

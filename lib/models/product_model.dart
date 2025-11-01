@@ -116,3 +116,8 @@ ProductModel findProductById(String id, List<ProductModel> products) {
     ); // if not found
   }
 }
+
+List<ProductModel> getProoductsByCategory(
+    String category, List<ProductModel> products) {
+  return products.where((product) => product.categories == category).toList();
+}
