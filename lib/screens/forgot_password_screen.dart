@@ -1,15 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'core_screens.dart';
 import '../widgets/core_widgets.dart';
+import 'core_screens.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController passwordTextController = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Color(0xff1E1E1E),
@@ -106,31 +108,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 6),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: '••••••••••••',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 14),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    borderSide:
-                                        BorderSide(color: Colors.white38),
-                                  ),
-                                  suffixIcon: Image.asset(
-                                    "assets/icons/see_icon.png",
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.white
-                                            .withValues(alpha: 0.4)),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                  ),
+                              TextFormFieldWidget(
+                                suffixIcon: Image.asset(
+                                  "assets/icons/see_icon.png",
                                 ),
-                                style: TextStyle(color: Colors.white),
+                                hintText: '••••••••••••',
+                                controller: passwordTextController,
+                                isObscured: true,
                               ),
                               SizedBox(height: 12),
                               Text(
@@ -141,32 +125,15 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 6),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: '••••••••••••',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 14),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    borderSide:
-                                        BorderSide(color: Colors.white38),
-                                  ),
-                                  suffixIcon: Image.asset(
-                                    "assets/icons/see_icon.png",
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.white
-                                            .withValues(alpha: 0.4)),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                  ),
+                              TextFormFieldWidget(
+                                suffixIcon: Image.asset(
+                                  "assets/icons/see_icon.png",
                                 ),
-                                style: TextStyle(color: Colors.white),
+                                hintText: '••••••••••••',
+                                controller: passwordTextController,
+                                isObscured: true,
                               ),
+
                               SizedBox(height: 12),
 
                               Text(
@@ -177,31 +144,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 6),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: '••••••••••••',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 14),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    borderSide:
-                                        BorderSide(color: Colors.white38),
-                                  ),
-                                  suffixIcon: Image.asset(
-                                    "assets/icons/see_icon.png",
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.white
-                                            .withValues(alpha: 0.4)),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                  ),
+                              TextFormFieldWidget(
+                                suffixIcon: Image.asset(
+                                  "assets/icons/see_icon.png",
                                 ),
-                                style: TextStyle(color: Colors.white),
+                                hintText: '••••••••••••',
+                                controller: passwordTextController,
+                                isObscured: true,
                               ),
 
                               Spacer(),

@@ -10,6 +10,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController passwordTextController = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Color(0xff1E1E1E),
@@ -97,71 +98,28 @@ class LoginScreen extends StatelessWidget {
 
                               // Add more widgets for the signup form here
 
-                              Text(
-                                'Email',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
+                              FormLableWidget(
+                                lable: "Email",
                               ),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: 'juilianasilva2211@gmail.com',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 14),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    borderSide:
-                                        BorderSide(color: Colors.white38),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.white
-                                            .withValues(alpha: 0.4)),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                  ),
-                                ),
-                                style: TextStyle(color: Colors.white),
+                              TextFormFieldWidget(
+                                hintText: 'juilianasilva2211@gmail.com',
+                                controller: passwordTextController,
                               ),
+
                               SizedBox(height: 12),
 
-                              Text(
-                                'Password',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
+                              FormLableWidget(
+                                lable: "Password",
                               ),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  hintText: '••••••••••••',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 16, vertical: 14),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    borderSide:
-                                        BorderSide(color: Colors.white38),
-                                  ),
-                                  suffixIcon: Image.asset(
-                                    "assets/icons/see_icon.png",
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors.white
-                                            .withValues(alpha: 0.4)),
-                                    borderRadius: BorderRadius.circular(50.0),
-                                  ),
+                              TextFormFieldWidget(
+                                suffixIcon: Image.asset(
+                                  "assets/icons/see_icon.png",
                                 ),
-                                style: TextStyle(color: Colors.white),
+                                hintText: '••••••••••••',
+                                controller: passwordTextController,
+                                isObscured: true,
                               ),
+
                               TextButton(
                                   onPressed: () {
                                     Navigator.of(context).pushReplacement(
