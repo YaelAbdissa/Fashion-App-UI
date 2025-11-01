@@ -484,5 +484,31 @@
                 "dimension": "45-47 inches"
             }
         ]
+    },
+    {
+        "productId": "p0021",
+        "productName": "African dress",
+        "categories": "tshirt",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image9.jpg",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
     }
 ]

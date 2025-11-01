@@ -1,0 +1,42 @@
+[
+    {
+        "id": "w_001",
+        "productId": "p005",
+        "dateAdded": "2025-10-20T14:25:00Z",
+        "note": "Buy during the sale",
+        "priority": 1,
+        "isPurchased": false
+    },
+    {
+        "id": "w_002",
+        "productId": "p0017",
+        "dateAdded": "2025-10-22T09:15:00Z",
+        "note": "Perfect for daily workouts",
+        "priority": 2,
+        "isPurchased": false
+    },
+    {
+        "id": "w_003",
+        "productId": "p009",
+        "dateAdded": "2025-10-24T18:40:00Z",
+        "note": "Looks good for office use",
+        "priority": 3,
+        "isPurchased": false
+    },
+    {
+        "id": "w_004",
+        "productId": "p002",
+        "dateAdded": "2025-10-28T11:10:00Z",
+        "note": null,
+        "priority": 4,
+        "isPurchased": true
+    },
+    {
+        "id": "w_005",
+        "productId": "p0021",
+        "dateAdded": "2025-10-28T11:10:00Z",
+        "note": null,
+        "priority": 4,
+        "isPurchased": true
+    }
+]

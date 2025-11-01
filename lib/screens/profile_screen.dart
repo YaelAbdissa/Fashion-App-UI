@@ -126,29 +126,38 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: size.height * 0.15,
-                width: size.width * 0.44,
-                decoration: BoxDecoration(
-                  color: Color(0xffEBF2F4),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/icons/icon_heart.png",
-                        width: 24, height: 24),
-                    Spacer(),
-                    Text(
-                      "whislist",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                      ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => WhislistScreen(),
                     ),
-                  ],
+                  );
+                },
+                child: Container(
+                  height: size.height * 0.15,
+                  width: size.width * 0.44,
+                  decoration: BoxDecoration(
+                    color: Color(0xffEBF2F4),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset("assets/icons/icon_heart.png",
+                          width: 24, height: 24),
+                      Spacer(),
+                      Text(
+                        "whislist",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],

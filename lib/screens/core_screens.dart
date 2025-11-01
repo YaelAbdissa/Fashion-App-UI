@@ -9,3 +9,4 @@ export 'profile_screen.dart';
 export 'signup_screen.dart';
 export 'verify_screen.dart';
 export 'manage_account_screen.dart';
+export 'whislist_screen.dart';

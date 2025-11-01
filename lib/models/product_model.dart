@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:fashion_app/models/whislist_model.dart';
 import 'package:flutter/services.dart';
 
 class ProductModel {
@@ -120,4 +121,14 @@ ProductModel findProductById(String id, List<ProductModel> products) {
 List<ProductModel> getProoductsByCategory(
     String category, List<ProductModel> products) {
   return products.where((product) => product.categories == category).toList();
+}
+
+List<ProductModel> getProductModelintersectionWhishilist(
+    List<WhislistModel> whilists, List<ProductModel> products) {
+  List<ProductModel> common = products
+      .where((product) =>
+          whilists.any((whislist) => whislist.productId == product.productId))
+      .toList();
+
+  return common;
 }
