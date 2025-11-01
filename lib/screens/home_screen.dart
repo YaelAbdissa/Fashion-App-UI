@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
         future: loadProducts(),
         builder: (context, snapShot) {
           final products = snapShot.data ?? [];
-          print("object ${products.length}  $snapShot");
           return Stack(
             children: [
               Scaffold(
@@ -207,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 15),
                     GridView.count(
-                      padding: EdgeInsets.symmetric(horizontal: 14),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       crossAxisCount: 2,
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),

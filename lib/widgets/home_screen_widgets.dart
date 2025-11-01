@@ -119,14 +119,14 @@ Container extraTshirtWidget(
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 15),
+          padding: const EdgeInsets.only(right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FrostedEffectWidget(
                 height: 40,
                 padding: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
-                child: priceDisplayWidget(price: product.price),
+                child: priceDisplayWidget(price: product.price.toString()),
               ),
               SizedBox(width: 6),
               FrostedEffectWidget(

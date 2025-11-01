@@ -1,36 +1,45 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
 class ProductModel {
+  String productId;
   String productName;
   String categories;
-  String price;
+  double price;
   String productDescription;
   String productImage;
+  List<Map<String, String>> size;
   ProductModel({
+    required this.productId,
     required this.productName,
     required this.categories,
     required this.price,
     required this.productDescription,
     required this.productImage,
+    required this.size,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
+      productId: json["productId"],
       productName: json['productName'],
       categories: json["categories"],
       price: json['price'],
       productDescription: json['productDescription'],
       productImage: json['productImage'],
+      size: (json['size'] as List).map((e) {
+        return Map<String, String>.from(e);
+      }).toList(),
     );
   }
 }
 
 Future<List<ProductModel>> loadProducts() async {
-  final String response = await rootBundle.loadString('assets/products.json');
+  final String response =
+      await rootBundle.loadString('assets/json/products.json');
   final data = json.decode(response) as List<dynamic>;
-  print("data $data");
   return data.map((item) => ProductModel.fromJson(item)).toList();
 }
 
@@ -85,3 +94,25 @@ List<ProductCategory> productCategories = [
     iconPath: 'assets/icons/jacket.png',
   ),
 ];
+
+ProductModel findProductById(String id, List<ProductModel> products) {
+  try {
+    return products.firstWhere((product) => product.productId == id);
+  } catch (e) {
+    return ProductModel(
+      productId: "p003",
+      productName: "Graphic T-Shirt,",
+      categories: "tshirt",
+      price: 800.00,
+      productDescription:
+          "Soft cotton t-shirt featuring a trendy graphic design",
+      productImage: "assets/images/image3.png",
+      size: [
+        {"size": "S", "dimension": "36-38 inches"},
+        {"size": "M", "dimension": "39-41 inches"},
+        {"size": "L", "dimension": "42-44 inches"},
+        {"size": "XL", "dimension": "45-47 inches"},
+      ],
+    ); // if not found
+  }
+}

@@ -1,0 +1,488 @@
+[
+    {
+        "productId": "p001",
+        "productName": "Classic Black Hoodie",
+        "categories": "hoodie",
+        "price": 1200.00,
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productImage": "assets/images/image1.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p002",
+        "productName": "Cozy Knit Sweater",
+        "categories": "sweater",
+        "price": 1500.00,
+        "productDescription": "Warm and stylish sweater perfect for cold weather.",
+        "productImage": "assets/images/image2.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p003",
+        "productName": "Graphic T-Shirt",
+        "categories": "tshirt",
+        "price": 800.00,
+        "productDescription": "Soft cotton t-shirt featuring a trendy graphic design.",
+        "productImage": "assets/images/image3.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p004",
+        "productName": "Classic Baseball Hat",
+        "categories": "hat",
+        "price": 600.00,
+        "productDescription": "Adjustable cotton hat ideal for casual outings.",
+        "productImage": "assets/images/image4.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p005",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image5.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p006",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p007",
+        "productName": "Classic Black Hoodie",
+        "categories": "hoodie",
+        "price": 1200.00,
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productImage": "assets/images/image1.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p008",
+        "productName": "Cozy Knit Sweater",
+        "categories": "sweater",
+        "price": 1500.00,
+        "productDescription": "Warm and stylish sweater perfect for cold weather.",
+        "productImage": "assets/images/image2.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p009",
+        "productName": "Graphic T-Shirt",
+        "categories": "tshirt",
+        "price": 800.00,
+        "productDescription": "Soft cotton t-shirt featuring a trendy graphic design.",
+        "productImage": "assets/images/image3.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0010",
+        "productName": "Classic Baseball Hat",
+        "categories": "hat",
+        "price": 600.00,
+        "productDescription": "Adjustable cotton hat ideal for casual outings.",
+        "productImage": "assets/images/image4.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0011",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image5.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0012",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0013",
+        "productName": "Classic Black Hoodie",
+        "categories": "hoodie",
+        "price": 1200.00,
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productImage": "assets/images/image1.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0014",
+        "productName": "Cozy Knit Sweater",
+        "categories": "sweater",
+        "price": 1500.00,
+        "productDescription": "Warm and stylish sweater perfect for cold weather.",
+        "productImage": "assets/images/image2.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0016",
+        "productName": "Graphic T-Shirt",
+        "categories": "tshirt",
+        "price": 800.00,
+        "productDescription": "Soft cotton t-shirt featuring a trendy graphic design.",
+        "productImage": "assets/images/image3.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0017",
+        "productName": "Classic Baseball Hat",
+        "categories": "hat",
+        "price": 600.00,
+        "productDescription": "Adjustable cotton hat ideal for casual outings.",
+        "productImage": "assets/images/image4.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0018",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image5.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0019",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    },
+    {
+        "productId": "p0020",
+        "productName": "Denim Jacket",
+        "categories": "jacket",
+        "price": 2000.00,
+        "productDescription": "Stylish and durable denim jacket that fits any outfit.",
+        "productImage": "assets/images/image6.png",
+        "size": [
+            {
+                "size": "S",
+                "dimension": "36-38 inches"
+            },
+            {
+                "size": "M",
+                "dimension": "39-41 inches"
+            },
+            {
+                "size": "L",
+                "dimension": "42-44 inches"
+            },
+            {
+                "size": "XL",
+                "dimension": "45-47 inches"
+            }
+        ]
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "productId": "p005",
+        "size": "M",
+        "sizeInDim": "42 inches",
+        "quantity": 1,
+        "price": 600.00
+    },
+    {
+        "productId": "p002",
+        "size": "One Size",
+        "sizeInDim": "-",
+        "quantity": 2,
+        "price": 600.00
+    },
+    {
+        "productId": "p003",
+        "size": "42",
+        "sizeInDim": "70 x 48 x 38",
+        "quantity": 1,
+        "price": 600.00
+    }
+]
