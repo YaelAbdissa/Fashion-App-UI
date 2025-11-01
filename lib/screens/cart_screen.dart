@@ -1,12 +1,10 @@
-import 'package:fashion_app/models/product_model.dart';
 import 'package:flutter/material.dart';
 
+import '../models/product_model.dart';
 import '../models/cart_model.dart';
 import '../utils/constants.dart';
-import '../widgets/forsted_effect_widget.dart';
-import '../widgets/home_screen_widgets.dart';
-import '../widgets/main_button_widget.dart';
-import '../widgets/product_title_widget.dart';
+
+import '../widgets/core_widgets.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -233,7 +231,7 @@ class _NewProductWidgetState extends State<NewProductWidget> {
             padding: EdgeInsets.only(bottom: 10),
             child: GestureDetector(
               onTap: () {
-                print("Deleted");
+                // print("Deleted");
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

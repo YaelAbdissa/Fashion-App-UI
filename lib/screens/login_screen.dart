@@ -1,12 +1,9 @@
 import 'dart:ui';
 
-import 'package:fashion_app/widgets/main_button_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/background_image_widget.dart';
-import 'forgot_password_screen.dart';
-import 'home_screen.dart';
-import 'signup_screen.dart';
+import 'core_screens.dart';
+import '../widgets/core_widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

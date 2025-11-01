@@ -1,11 +1,10 @@
 import 'dart:ui';
-import 'package:fashion_app/models/product_model.dart';
-import 'package:fashion_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/forsted_effect_widget.dart';
-import '../widgets/home_screen_widgets.dart';
-import '../widgets/product_title_widget.dart';
+import '../models/product_model.dart';
+import '../utils/constants.dart';
+
+import '../widgets/core_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool justSignedUp;

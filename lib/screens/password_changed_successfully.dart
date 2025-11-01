@@ -1,9 +1,8 @@
 import 'dart:ui';
 
-import 'package:fashion_app/widgets/main_button_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/background_image_widget.dart';
+import '../widgets/core_widgets.dart';
 
 class PasswordChangedSuccessfullyScreen extends StatelessWidget {
   const PasswordChangedSuccessfullyScreen({super.key});

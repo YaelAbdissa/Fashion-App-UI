@@ -1,11 +1,12 @@
 import 'dart:ui';
 
-import 'package:fashion_app/screens/home_screen.dart';
-import 'package:fashion_app/widgets/main_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-import '../widgets/background_image_widget.dart';
+import '../widgets/core_widgets.dart';
+import 'core_screens.dart';
+
+// import '../widgets/background_image_widget.dart';
 
 class VerifyScreen extends StatelessWidget {
   const VerifyScreen({super.key});

@@ -1,12 +1,8 @@
 import 'dart:ui';
-
-import 'package:fashion_app/widgets/main_button_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/background_image_widget.dart';
-import '../widgets/text_form_field_phone_widget.dart';
-import 'login_screen.dart';
-import 'verify_screen.dart';
+import 'core_screens.dart';
+import '../widgets/core_widgets.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
