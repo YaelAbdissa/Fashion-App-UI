@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../utils/constants.dart';
+import 'core_screens.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "Profile",
-          style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.w600,
-          ),
+          style: appBarTextStyle,
         ),
         elevation: 0,
         backgroundColor: Colors.white,
@@ -76,7 +77,6 @@ class ProfileScreen extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 24,
-              // height: 1.3,
             ),
           ),
           Text(
@@ -84,7 +84,6 @@ class ProfileScreen extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 12,
-              // height: 1.3,
             ),
           ),
           SizedBox(
@@ -93,30 +92,38 @@ class ProfileScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                height: size.height * 0.15,
-                width: size.width * 0.44,
-                decoration: BoxDecoration(
-                  color: Color(0xffEBF2F4),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.all(15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/icons/icon_manage_acc.png",
-                        width: 24, height: 24),
-                    Spacer(),
-                    Text(
-                      "Manage Account",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        // height: 1.3,
-                      ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ManageAccountScreen(),
                     ),
-                  ],
+                  );
+                },
+                child: Container(
+                  height: size.height * 0.15,
+                  width: size.width * 0.44,
+                  decoration: BoxDecoration(
+                    color: Color(0xffEBF2F4),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset("assets/icons/icon_manage_acc.png",
+                          width: 24, height: 24),
+                      Spacer(),
+                      Text(
+                        "Manage Account",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
@@ -173,7 +180,6 @@ class ProfileScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         fontSize: 26,
                         color: Colors.white,
-                        height: 1.3,
                       ),
                     ),
                     SizedBox(
@@ -184,7 +190,6 @@ class ProfileScreen extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 12,
-                        height: 1.3,
                         color: Colors.white.withValues(alpha: 0.7),
                       ),
                     ),
@@ -213,7 +218,6 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
-                            height: 1.3,
                           ),
                         ),
                         SizedBox(
@@ -224,7 +228,6 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
-                            height: 1.3,
                           ),
                         ),
                       ],

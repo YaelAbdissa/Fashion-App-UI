@@ -2,7 +2,11 @@ import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
 class TextFormPhoneField extends StatefulWidget {
-  const TextFormPhoneField({super.key});
+  final bool isBackgroundWhite;
+  const TextFormPhoneField({
+    super.key,
+    this.isBackgroundWhite = false,
+  });
 
   @override
   State<TextFormPhoneField> createState() => TextFormdPhoneFieldState();
@@ -29,11 +33,14 @@ class TextFormdPhoneFieldState extends State<TextFormPhoneField> {
     return Container(
       width: double.infinity,
       height: 60,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         // color: Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(40),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.4)),
+        border: Border.all(
+            color: widget.isBackgroundWhite
+                ? Color(0xffEBF2F4)
+                : Colors.white.withValues(alpha: 0.4)),
       ),
       child: Row(
         children: [
@@ -60,7 +67,9 @@ class TextFormdPhoneFieldState extends State<TextFormPhoneField> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.1),
+                color: widget.isBackgroundWhite
+                    ? Color(0xffEBF2F4)
+                    : Colors.white.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Row(
@@ -85,10 +94,17 @@ class TextFormdPhoneFieldState extends State<TextFormPhoneField> {
                   const SizedBox(width: 6),
                   Text(
                     '+${selectedCountry.phoneCode}',
-                    style: const TextStyle(color: Colors.white, fontSize: 13),
+                    style: TextStyle(
+                        color: widget.isBackgroundWhite
+                            ? Colors.black
+                            : Colors.white,
+                        fontSize: 13),
                   ),
-                  const Icon(Icons.keyboard_arrow_down,
-                      color: Colors.white, size: 20),
+                  Icon(Icons.keyboard_arrow_down,
+                      color: widget.isBackgroundWhite
+                          ? Colors.black
+                          : Colors.white,
+                      size: 20),
                 ],
               ),
             ),
@@ -104,7 +120,7 @@ class TextFormdPhoneFieldState extends State<TextFormPhoneField> {
               decoration: InputDecoration(
                 hintText: "834 856 346",
                 hintStyle: TextStyle(
-                  color: Colors.white,
+                  color: widget.isBackgroundWhite ? Colors.black : Colors.white,
                   fontSize: 14,
                 ),
                 border: InputBorder.none,

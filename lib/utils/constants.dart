@@ -29,3 +29,8 @@ var totalPriceTextTextStyle = TextStyle(
   fontSize: 24,
   fontWeight: FontWeight.w500,
 );
+
+var appBarTextStyle = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w600,
+);
