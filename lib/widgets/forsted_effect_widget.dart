@@ -7,18 +7,21 @@ class FrostedEffectWidget extends StatelessWidget {
   final double? height;
   final double? width;
   final EdgeInsetsGeometry? padding;
-  const FrostedEffectWidget({
-    super.key,
-    required this.child,
-    this.height,
-    this.padding,
-    this.width,
-  });
+  final BorderRadiusGeometry borderRadius;
+  final BoxBorder? border;
+  const FrostedEffectWidget(
+      {super.key,
+      required this.child,
+      this.height,
+      this.padding,
+      this.width,
+      this.borderRadius = const BorderRadius.all(Radius.circular(26)),
+      this.border});
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(26),
+      borderRadius: borderRadius,
       child: BackdropFilter(
         filter: ImageFilter.blur(
           sigmaX: 8.0,
@@ -30,11 +33,12 @@ class FrostedEffectWidget extends StatelessWidget {
           padding: padding,
           decoration: BoxDecoration(
             color: Colors.white.withValues(alpha: 0.17),
-            borderRadius: BorderRadius.circular(26),
-            border: Border.all(
-              width: 1,
-              color: Colors.white.withValues(alpha: 0.17),
-            ),
+            borderRadius: borderRadius,
+            border: border ??
+                Border.all(
+                  width: 1,
+                  color: Colors.white.withOpacity(0.17),
+                ),
           ),
           child: child,
         ),

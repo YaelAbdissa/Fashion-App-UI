@@ -89,54 +89,80 @@ Widget collaborationWidget({required size}) {
   );
 }
 
-Container extraTshirtWidget(
-    {required int index, required ProductModel product}) {
+Widget extraTshirtWidget({
+  required int index,
+  required ProductModel product,
+  bool isSelected = false,
+}) {
   return Container(
-    padding: EdgeInsets.only(left: 15, right: 10, bottom: 26, top: 26),
-    height: 260,
+    // margin: EdgeInsets.all(isSelected ? 4 : 0),
     decoration: BoxDecoration(
       image: DecorationImage(
-        fit: BoxFit.fitHeight,
+        fit: BoxFit.cover,
         image: AssetImage(product.productImage),
       ),
       borderRadius: BorderRadius.circular(30),
     ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
+    child: Stack(
+      clipBehavior: Clip.none,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TitleWidget(
-              title: product.productName,
-              style: productTitleTextStyle,
-            ),
-            TitleWidget(
-              title: getCategoryById(product.categories).name,
-              style: productSubTitleTextStyle,
-            ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: Row(
+        Container(
+          padding: EdgeInsets.only(left: 15, right: 10, bottom: 26, top: 26),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FrostedEffectWidget(
-                height: 40,
-                padding: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
-                child: priceDisplayWidget(price: product.price.toString()),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TitleWidget(
+                    title: product.productName,
+                    style: productTitleTextStyle,
+                  ),
+                  TitleWidget(
+                    title: getCategoryById(product.categories).name,
+                    style: productSubTitleTextStyle,
+                  ),
+                ],
               ),
-              SizedBox(width: 6),
-              FrostedEffectWidget(
-                height: 40,
-                width: 40,
-                child: iconDisplayWidget(iconData: Icons.favorite),
-              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    FrostedEffectWidget(
+                      height: 40,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+                      child:
+                          priceDisplayWidget(price: product.price.toString()),
+                    ),
+                    SizedBox(width: 6),
+                    FrostedEffectWidget(
+                      height: 40,
+                      width: 40,
+                      child: iconDisplayWidget(iconData: Icons.favorite),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
-        )
+        ),
+        if (isSelected)
+          Positioned(
+            bottom: -10,
+            right: 0,
+            left: 0,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Image.asset(
+                "assets/icons/icon_check.png",
+                // width: 30,
+                // height: 30,
+              ),
+            ),
+          )
       ],
     ),
   );
