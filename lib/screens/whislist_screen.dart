@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:fashion_app/widgets/core_widgets.dart';
-import 'package:fashion_app/widgets/home_screen_widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../models/product_model.dart';
@@ -43,7 +42,21 @@ class _WhislistScreenState extends State<WhislistScreen> {
     });
   }
 
-  void _toggleBottomSheet(BuildContext context, int selectedItems) {
+  void selectAll(List<WhislistModel> whislistItemsList) {
+    setState(() {
+      selectedIndexes =
+          List.generate(whislistItemsList.length, (index) => index);
+    });
+  }
+
+  void deselectAll() {
+    setState(() {
+      selectedIndexes = [];
+    });
+  }
+
+  void _toggleBottomSheet(BuildContext context, int selectedItems,
+      List<WhislistModel> whislistItemsList) {
     if (_isSheetOpen && selectedIndexes.isEmpty) {
       _controller?.close();
       setState(() {
@@ -60,137 +73,165 @@ class _WhislistScreenState extends State<WhislistScreen> {
         elevation: 0,
         context: context,
         builder: (context) {
-          return ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(50),
-              topRight: Radius.circular(50),
-            ),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 8.0,
-                sigmaY: 8.0,
+          return StatefulBuilder(builder: (context, setModalState) {
+            return ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
               ),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.18,
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 52, 53, 56),
-
-                  backgroundBlendMode: BlendMode.overlay,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(50),
-                    topRight: Radius.circular(50),
-                  ),
-                  // color: Colors.?blue,
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: 8.0,
+                  sigmaY: 8.0,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  // crossAxisAlignment: ,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xff3AA2ED),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "$selectedItems",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.18,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 52, 53, 56),
+
+                    backgroundBlendMode: BlendMode.overlay,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
+                    ),
+                    // color: Colors.?blue,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: ,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xff3AA2ED),
                             ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        FrostedEffectWidget(
-                          border: Border.all(
-                            color: Colors.white38,
-                          ),
-                          borderRadius: BorderRadius.circular(36),
-                          height: 61,
-                          padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 26),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 30,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white.withValues(alpha: 0.2),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                "Select All",
+                            child: Center(
+                              child: Text(
+                                "${selectedIndexes.length}",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Container(
-                          width: 61,
-                          height: 61,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffFFE7E7),
+                          SizedBox(
+                            width: 8,
                           ),
-                          child: Image.asset("assets/icons/icon_trash.png"),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Container(
-                          width: 61,
-                          height: 61,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white.withValues(alpha: 0.15),
+                          FrostedEffectWidget(
                             border: Border.all(
                               color: Colors.white38,
                             ),
+                            borderRadius: BorderRadius.circular(36),
+                            height: 61,
+                            padding: EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 26),
+                            child: Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    if (whislistItemsList.length ==
+                                        selectedIndexes.length) {
+                                      setModalState(() {
+                                        deselectAll();
+                                      });
+                                    } else {
+                                      setModalState(() {
+                                        selectAll(whislistItemsList);
+                                      });
+                                    }
+                                  },
+                                  child: AnimatedContainer(
+                                    duration: Duration(milliseconds: 300),
+                                    width: 30,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: whislistItemsList.length ==
+                                              selectedIndexes.length
+                                          ? Color(0xff3AA2ED)
+                                          : Colors.white.withValues(alpha: 0.2),
+                                    ),
+                                    child: (whislistItemsList.length ==
+                                            selectedIndexes.length)
+                                        ? Image.asset(
+                                            "assets/icons/icon_check.png")
+                                        : null,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  whislistItemsList.length ==
+                                          selectedIndexes.length
+                                      ? "De-select"
+                                      : "Select All",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          child: Image.asset(
-                            "assets/icons/icon_add_to_cart.png",
-                            width: 24,
-                            height: 24,
+                          SizedBox(
+                            width: 8,
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    GestureDetector(
-                      onTap: () {
-                        _controller?.close();
-                        setState(() {
-                          _isSheetOpen = false;
-                        });
-                      },
-                      child: Image.asset("assets/icons/icon_close.png"),
-                    )
-                  ],
+                          Container(
+                            width: 61,
+                            height: 61,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xffFFE7E7),
+                            ),
+                            child: Image.asset("assets/icons/icon_trash.png"),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Container(
+                            width: 61,
+                            height: 61,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white.withValues(alpha: 0.15),
+                              border: Border.all(
+                                color: Colors.white38,
+                              ),
+                            ),
+                            child: Image.asset(
+                              "assets/icons/icon_add_to_cart.png",
+                              width: 24,
+                              height: 24,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      GestureDetector(
+                        onTap: () {
+                          _controller?.close();
+                          setState(() {
+                            _isSheetOpen = false;
+                          });
+                        },
+                        child: Image.asset("assets/icons/icon_close.png"),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
+            );
+          });
         },
       );
       setState(() {
@@ -294,7 +335,8 @@ class _WhislistScreenState extends State<WhislistScreen> {
                     return GestureDetector(
                       onLongPress: () {
                         toggleSelection(index);
-                        _toggleBottomSheet(context, selectedIndexes.length);
+                        _toggleBottomSheet(
+                            context, selectedIndexes.length, whislists);
                       },
                       child: AnimatedContainer(
                         duration: Duration(milliseconds: 200),

@@ -6,8 +6,6 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import '../widgets/core_widgets.dart';
 import 'core_screens.dart';
 
-// import '../widgets/background_image_widget.dart';
-
 class VerifyScreen extends StatelessWidget {
   const VerifyScreen({super.key});
 

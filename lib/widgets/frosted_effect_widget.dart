@@ -37,7 +37,7 @@ class FrostedEffectWidget extends StatelessWidget {
             border: border ??
                 Border.all(
                   width: 1,
-                  color: Colors.white.withOpacity(0.17),
+                  color: Colors.white.withValues(alpha: 0.17),
                 ),
           ),
           child: child,

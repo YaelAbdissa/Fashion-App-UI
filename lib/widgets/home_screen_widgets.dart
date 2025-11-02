@@ -3,8 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../models/product_model.dart';
 import '../utils/constants.dart';
-import 'forsted_effect_widget.dart';
-import 'product_title_widget.dart';
+import 'core_widgets.dart';
 
 Widget priceDisplayWidget({required String price}) {
   return Center(
