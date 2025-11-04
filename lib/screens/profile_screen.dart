@@ -168,41 +168,50 @@ class ProfileScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                height: size.height * 0.323,
-                width: size.width * 0.44,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset("assets/icons/icon_delivery.png",
-                        width: 24, height: 24),
-                    Spacer(),
-                    Text(
-                      "3 items",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 26,
-                        color: Colors.white,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => DeliveryItemScreen(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: size.height * 0.323,
+                  width: size.width * 0.44,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset("assets/icons/icon_delivery.png",
+                          width: 24, height: 24),
+                      Spacer(),
+                      Text(
+                        "3 items",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 26,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 18,
-                    ),
-                    Text(
-                      "Being deliver",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
-                        color: Colors.white.withValues(alpha: 0.7),
+                      SizedBox(
+                        height: 18,
                       ),
-                    ),
-                  ],
+                      Text(
+                        "Being deliver",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Colors.white.withValues(alpha: 0.7),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Column(
