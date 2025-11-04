@@ -216,39 +216,45 @@ class ProfileScreen extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Container(
-                    height: size.height * 0.223,
-                    width: size.width * 0.44,
-                    decoration: BoxDecoration(
-                      color: Color(0xffEBF2F4),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image.asset("assets/icons/icon_time_quarter.png",
-                            width: 24, height: 24),
-                        Spacer(),
-                        Text(
-                          "12 items",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => OrderHistoryScreen()));
+                    },
+                    child: Container(
+                      height: size.height * 0.223,
+                      width: size.width * 0.44,
+                      decoration: BoxDecoration(
+                        color: Color(0xffEBF2F4),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset("assets/icons/icon_time_quarter.png",
+                              width: 24, height: 24),
+                          Spacer(),
+                          Text(
+                            "12 items",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        Text(
-                          "Order history",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12,
+                          SizedBox(
+                            height: 18,
                           ),
-                        ),
-                      ],
+                          Text(
+                            "Order history",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(

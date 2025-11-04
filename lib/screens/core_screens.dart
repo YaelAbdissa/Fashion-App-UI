@@ -11,3 +11,4 @@ export 'verify_screen.dart';
 export 'manage_account_screen.dart';
 export 'whislist_screen.dart';
 export 'delivery_item_screen.dart';
+export 'order_history_screen.dart';
