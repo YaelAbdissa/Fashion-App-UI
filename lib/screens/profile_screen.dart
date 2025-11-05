@@ -1,3 +1,4 @@
+import 'package:fashion_app/widgets/show_logout_dilaog.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
@@ -260,30 +261,35 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    height: size.height * 0.089,
-                    width: size.width * 0.44,
-                    decoration: BoxDecoration(
-                      color: Color(0xffFFE7E7),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    padding: const EdgeInsets.all(20),
-                    child: Row(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
-                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset("assets/icons/icon_log_out.png",
-                            width: 24, height: 24),
-                        SizedBox(width: 10),
-                        Text(
-                          "Logout",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Color(0xffEC4D69),
+                  GestureDetector(
+                    onTap: () {
+                      showLogoutDialog(context);
+                    },
+                    child: Container(
+                      height: size.height * 0.089,
+                      width: size.width * 0.44,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFFE7E7),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Image.asset("assets/icons/icon_log_out.png",
+                              width: 24, height: 24),
+                          SizedBox(width: 10),
+                          Text(
+                            "Logout",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              color: Color(0xffEC4D69),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],
