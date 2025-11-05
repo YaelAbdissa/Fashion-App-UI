@@ -163,7 +163,7 @@ class VerifyScreen extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => HomeScreen(
+                                      builder: (context) => HomeNavScreen(
                                         justSignedUp: true,
                                       ),
                                     ),

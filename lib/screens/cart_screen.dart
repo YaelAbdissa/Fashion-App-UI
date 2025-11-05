@@ -174,14 +174,7 @@ class _CartScreenState extends State<CartScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
                     child: MainButtonWidget(
-                      onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => HomeScreen(),
-                        //   ),
-                        // );
-                      },
+                      onPressed: () {},
                       buttonText: "Buy now",
                     ),
                   ),

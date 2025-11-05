@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'core_screens.dart';
 
 class HomeNavScreen extends StatefulWidget {
-  const HomeNavScreen({super.key});
+  final bool justSignedUp;
+  const HomeNavScreen({super.key, this.justSignedUp = false});
 
   @override
   State<HomeNavScreen> createState() => _HomeNavScreenState();
@@ -12,11 +13,19 @@ class HomeNavScreen extends StatefulWidget {
 class _HomeNavScreenState extends State<HomeNavScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> widgetOptions = [
-    HomeScreen(),
-    CartScreen(),
-    ProfileScreen(),
-  ];
+  List<Widget> widgetOptions = [];
+
+  @override
+  void initState() {
+    super.initState();
+    widgetOptions = [
+      HomeScreen(
+        justSignedUp: widget.justSignedUp,
+      ),
+      CartScreen(),
+      ProfileScreen(),
+    ];
+  }
 
   void _onItemTapped(int index) {
     setState(() {

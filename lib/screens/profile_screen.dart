@@ -22,7 +22,18 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         actions: [
-          Image.asset("assets/icons/icon_help.png"),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => FaqScreen(),
+                ),
+              );
+            },
+            child: Image.asset(
+              "assets/icons/icon_help.png",
+            ),
+          ),
           SizedBox(
             width: 20,
           ),

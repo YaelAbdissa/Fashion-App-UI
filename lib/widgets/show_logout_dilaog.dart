@@ -42,7 +42,7 @@ void showLogoutDialog(BuildContext context) {
                   buttonStyle: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xffDDDDDD),
                     minimumSize:
-                        Size(MediaQuery.of(context).size.width * 0.36, 61),
+                        Size(MediaQuery.of(context).size.width * 0.34, 61),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
                     ),
@@ -59,7 +59,7 @@ void showLogoutDialog(BuildContext context) {
                       borderRadius: BorderRadius.circular(50),
                     ),
                     minimumSize:
-                        Size(MediaQuery.of(context).size.width * 0.36, 61),
+                        Size(MediaQuery.of(context).size.width * 0.34, 61),
                   ),
                   onPressed: () {
                     Navigator.of(context).push(
