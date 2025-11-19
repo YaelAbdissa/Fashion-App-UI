@@ -8,15 +8,18 @@ class FrostedEffectWidget extends StatelessWidget {
   final double? width;
   final EdgeInsetsGeometry? padding;
   final BorderRadiusGeometry borderRadius;
+  final Color? bgColor;
   final BoxBorder? border;
-  const FrostedEffectWidget(
-      {super.key,
-      required this.child,
-      this.height,
-      this.padding,
-      this.width,
-      this.borderRadius = const BorderRadius.all(Radius.circular(26)),
-      this.border});
+  const FrostedEffectWidget({
+    super.key,
+    required this.child,
+    this.height,
+    this.padding,
+    this.width,
+    this.borderRadius = const BorderRadius.all(Radius.circular(26)),
+    this.border,
+    this.bgColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class FrostedEffectWidget extends StatelessWidget {
           width: width,
           padding: padding,
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.17),
+            color: bgColor ?? Colors.white.withValues(alpha: 0.17),
             borderRadius: borderRadius,
             border: border ??
                 Border.all(

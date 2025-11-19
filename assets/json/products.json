@@ -4,9 +4,13 @@
         "productName": "Classic Black Hoodie",
         "categories": "hoodie",
         "price": 1200.00,
-        "productDescription": "A comfortable unisex black hoodie made with premium cotton.",
+        "productDescription": "A comfortable unisex black hoodie made with premium cotton. A comfortable unisex black hoodie made with premium cotton.",
         "productImage": "assets/images/image1.png",
         "size": [
+            {
+                "size": "XS",
+                "dimension": "33-35 inches"
+            },
             {
                 "size": "S",
                 "dimension": "36-38 inches"
@@ -22,6 +26,10 @@
             {
                 "size": "XL",
                 "dimension": "45-47 inches"
+            },
+            {
+                "size": "XXL",
+                "dimension": "48-50 inches"
             }
         ]
     },

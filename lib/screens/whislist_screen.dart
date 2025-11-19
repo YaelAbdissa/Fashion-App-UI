@@ -1,11 +1,11 @@
 import 'dart:ui';
 
-import 'package:fashion_app/widgets/core_widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../models/product_model.dart';
 import '../models/whislist_model.dart';
 import '../utils/constants.dart';
+import '../widgets/core_widgets.dart';
 
 class WhislistScreen extends StatefulWidget {
   const WhislistScreen({super.key});

@@ -5,12 +5,12 @@ import '../models/product_model.dart';
 import '../utils/constants.dart';
 import 'core_widgets.dart';
 
-Widget priceDisplayWidget({required String price}) {
+Widget priceDisplayWidget({required String price, Color color = Colors.white}) {
   return Center(
     child: Text(
       "\$$price",
       style: TextStyle(
-        color: Colors.white,
+        color: color,
         fontSize: 14,
         fontWeight: FontWeight.w600,
       ),

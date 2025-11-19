@@ -13,3 +13,4 @@ export 'whislist_screen.dart';
 export 'delivery_item_screen.dart';
 export 'order_history_screen.dart';
 export 'faq_screen.dart';
+export 'detail_screen.dart';

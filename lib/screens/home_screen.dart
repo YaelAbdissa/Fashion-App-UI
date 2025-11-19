@@ -5,6 +5,7 @@ import '../models/product_model.dart';
 import '../utils/constants.dart';
 
 import '../widgets/core_widgets.dart';
+import 'core_screens.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool justSignedUp;
@@ -222,11 +223,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           selectedCategory == "all"
                               ? products.length
                               : productsByCategory.length, (index) {
-                        return extraTshirtWidget(
-                            index: index,
-                            product: selectedCategory == "all"
-                                ? products[index]
-                                : productsByCategory[index]);
+                        return GestureDetector(
+                          onTap: () {
+                            // Navigator.of(context).push(
+                            //   MaterialPageRoute(
+                            //     builder: (context) => DetailScreen(
+                            //       product: products[index],
+                            //     ),
+                            //   ),
+                            // );
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => DetailScreen(
+                                  product: products[index],
+                                ),
+                              ),
+                            );
+                          },
+                          child: extraTshirtWidget(
+                              index: index,
+                              product: selectedCategory == "all"
+                                  ? products[index]
+                                  : productsByCategory[index]),
+                        );
                       }),
                     ),
                     SizedBox(height: 20),

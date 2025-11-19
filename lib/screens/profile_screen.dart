@@ -1,10 +1,10 @@
 import 'dart:ui';
 
-import 'package:fashion_app/widgets/show_logout_dilaog.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
 import 'core_screens.dart';
+import '../widgets/core_widgets.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -16,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           "Profile",
           style: appBarTextStyle,

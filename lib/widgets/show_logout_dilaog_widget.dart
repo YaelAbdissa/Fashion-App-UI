@@ -1,6 +1,7 @@
-import 'package:fashion_app/screens/login_screen.dart';
-import 'package:fashion_app/widgets/core_widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/core_screens.dart';
+import '../widgets/core_widgets.dart';
 
 void showLogoutDialog(BuildContext context) {
   showDialog(
