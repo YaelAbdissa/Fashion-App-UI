@@ -1,3 +1,4 @@
+import 'package:fashion_app/screens/core_screens.dart';
 import 'package:flutter/material.dart';
 
 import '../models/product_model.dart';
@@ -174,7 +175,13 @@ class _CartScreenState extends State<CartScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
                     child: MainButtonWidget(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => PaymentMethodScreen(),
+                          ),
+                        );
+                      },
                       buttonText: "Buy now",
                     ),
                   ),
