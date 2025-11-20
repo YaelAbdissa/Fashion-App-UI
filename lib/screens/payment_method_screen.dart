@@ -1,5 +1,7 @@
-import 'package:fashion_app/widgets/main_button_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/core_widgets.dart';
+import 'core_screens.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
   const PaymentMethodScreen({super.key});
@@ -45,30 +47,39 @@ class PaymentMethodScreen extends StatelessWidget {
                   //   ),
                   // );
                 },
-                child: Container(
-                  height: size.height * 0.3,
-                  width: size.width * 0.21,
-                  decoration: BoxDecoration(
-                    color: Color(0xffEBF2F4),
-                    borderRadius: BorderRadius.circular(39),
-                  ),
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/icons/icon_add_credit_card.png",
-                          width: 24, height: 24),
-                      SizedBox(height: 10),
-                      Text(
-                        "Add card",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                        textAlign: TextAlign.center,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => AddCardScreen(),
                       ),
-                    ],
+                    );
+                  },
+                  child: Container(
+                    height: size.height * 0.3,
+                    width: size.width * 0.21,
+                    decoration: BoxDecoration(
+                      color: Color(0xffEBF2F4),
+                      borderRadius: BorderRadius.circular(39),
+                    ),
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/icons/icon_add_credit_card.png",
+                            width: 24, height: 24),
+                        SizedBox(height: 10),
+                        Text(
+                          "Add card",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

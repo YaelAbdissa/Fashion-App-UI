@@ -31,18 +31,22 @@ class TextFormFieldWidget extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50.0),
           borderSide: BorderSide(
-              color: isBackgroundWhite ? Color(0xffEBF2F4) : Colors.white38),
+            color: isBackgroundWhite ? Color(0xffEBF2F4) : Colors.white38,
+          ),
         ),
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-              color: isBackgroundWhite
-                  ? Color(0xffEBF2F4)
-                  : Colors.white.withValues(alpha: 0.4)),
+            color: isBackgroundWhite
+                ? Color(0xffEBF2F4)
+                : Colors.white.withValues(alpha: 0.4),
+          ),
           borderRadius: BorderRadius.circular(50.0),
         ),
       ),
-      style: TextStyle(color: isBackgroundWhite ? Colors.black : Colors.white),
+      style: TextStyle(
+        color: isBackgroundWhite ? Colors.black : Colors.white,
+      ),
     );
   }
 }
