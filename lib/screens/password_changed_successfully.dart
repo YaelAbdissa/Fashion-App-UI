@@ -16,14 +16,14 @@ class PasswordChangedSuccessfullyScreen extends StatelessWidget {
         child: Stack(
           children: [
             BackgroundImageWidget(
-              imagePath: 'assets/blur_background.png',
+              imagePath: 'assets/images/blur_background.png',
               height: MediaQuery.of(context).size.height,
             ),
             Positioned(
               top: 20,
               left: 10,
               right: 10,
-              child: Image.asset("assets/logo.png"),
+              child: Image.asset("assets/images/logo.png"),
             ),
             Positioned(
               top: MediaQuery.of(context).size.height * 0.49,

@@ -12,7 +12,7 @@ class OnboardingScreen extends StatelessWidget {
       body: Stack(
         children: [
           BackgroundImageWidget(
-            imagePath: 'assets/Image.png',
+            imagePath: 'assets/images/Image.png',
             height: MediaQuery.of(context).size.height * 0.78,
           ),
           Positioned(
