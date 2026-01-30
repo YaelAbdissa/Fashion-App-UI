@@ -6,6 +6,7 @@ import '../utils/constants.dart';
 
 import '../widgets/core_widgets.dart';
 import 'core_screens.dart';
+import 'search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool justSignedUp;
@@ -64,6 +65,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: GestureDetector(
                         onTap: () {
                           // Handle notification icon tap
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SearchScreen(
+                                products: products,
+                              ),
+                            ),
+                          );
                         },
                         child: Image.asset("assets/icons/icon_search.png"),
                       ),
