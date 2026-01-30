@@ -16,6 +16,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+  bool justSignedUp = true;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
   String selectedCategory = "all";
   @override
   Widget build(BuildContext context) {
@@ -61,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 body: ListView(
-                  physics: widget.justSignedUp
+                  physics: widget.justSignedUp && justSignedUp
                       ? NeverScrollableScrollPhysics()
                       : AlwaysScrollableScrollPhysics(),
                   children: [
@@ -262,10 +272,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              widget.justSignedUp
+              widget.justSignedUp && justSignedUp
+                  // true
                   ? Positioned(
-                      top: 150,
-                      bottom: 150,
+                      // top: _currentPage == 1 ? 150 : 130,
+                      // bottom: _currentPage == 1 ? 170 : 140,
+                      top: 130,
+                      bottom: 140,
                       left: 10,
                       right: 10,
                       child: BackdropFilter(
@@ -273,8 +286,304 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           height: size.height * 0.575,
                           decoration: BoxDecoration(
-                              color: Colors.purpleAccent,
-                              borderRadius: BorderRadius.circular(37)),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(37),
+                          ),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 22, left: 22, right: 22),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: Container(
+                                      height: 4,
+                                      decoration: BoxDecoration(
+                                          color: Color(_currentPage == 1
+                                              ? 0xffEBF2F4
+                                              : 0xff3AA2ED),
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                    )),
+                                    SizedBox(width: 8),
+                                    Expanded(
+                                        child: Container(
+                                      height: 4,
+                                      decoration: BoxDecoration(
+                                          color: Color(_currentPage == 1
+                                              ? 0xff3AA2ED
+                                              : 0xffEBF2F4),
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                    )),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                "${_currentPage == 1 ? "2" : "1"}/2",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Expanded(
+                                child: PageView(
+                                  controller: _pageController,
+                                  onPageChanged: (int page) {
+                                    setState(() {
+                                      _currentPage = page;
+                                    });
+                                  },
+                                  children: [
+                                    Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 30,
+                                        ),
+                                        Text(
+                                          "Complete your profile photo",
+                                          style: appBarTextStyle,
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Container(
+                                          width: size.height * 0.129,
+                                          height: size.height * 0.129,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(26),
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/images/image_profile.png"),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Container(
+                                              height: 107,
+                                              width: 107,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xffEBF2F4),
+                                                borderRadius:
+                                                    BorderRadius.circular(26),
+                                                border: Border.all(
+                                                  color: Colors.white
+                                                      .withValues(alpha: 0.25),
+                                                ),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "assets/icons/icon_camera_black.png",
+                                                    height: 30,
+                                                    width: 30,
+                                                  ),
+                                                  SizedBox(height: 12),
+                                                  Text(
+                                                    "Camera",
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 107,
+                                              width: 107,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xffEBF2F4),
+                                                borderRadius:
+                                                    BorderRadius.circular(26),
+                                                border: Border.all(
+                                                  color: Colors.white
+                                                      .withValues(alpha: 0.25),
+                                                ),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "assets/icons/icon_gallery_black.png",
+                                                    height: 30,
+                                                    width: 30,
+                                                  ),
+                                                  SizedBox(height: 12),
+                                                  Text(
+                                                    "Gallery",
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 107,
+                                              width: 107,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xffEBF2F4),
+                                                borderRadius:
+                                                    BorderRadius.circular(26),
+                                                border: Border.all(
+                                                  color: Colors.white
+                                                      .withValues(alpha: 0.25),
+                                                ),
+                                              ),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    "assets/icons/icon_avatar_black.png",
+                                                    height: 30,
+                                                    width: 30,
+                                                  ),
+                                                  SizedBox(height: 12),
+                                                  Text(
+                                                    "Avatar",
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 30,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 22),
+                                          child: MainButtonWidget(
+                                            onPressed: () {
+                                              _pageController.nextPage(
+                                                duration:
+                                                    Duration(milliseconds: 300),
+                                                curve: Curves.easeInOut,
+                                              );
+                                            },
+                                            buttonText: "Next",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        SizedBox(
+                                          height: 30,
+                                        ),
+                                        Image.asset(
+                                          "assets/icons/icon_add_location.png",
+                                          height: 44,
+                                          width: 44,
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text(
+                                          "Complete your address",
+                                          style: appBarTextStyle,
+                                        ),
+                                        SizedBox(
+                                          height: 14,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 22),
+                                          child: Text(
+                                            "To process orders and delivery quickly and accurately, please complete your address information.",
+                                            style: normalTextTextStyle,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 35,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 22,
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: MainButtonWidget(
+                                                    buttonStyle: ElevatedButton
+                                                        .styleFrom(
+                                                      minimumSize: Size(
+                                                          double.infinity, 61),
+                                                      backgroundColor:
+                                                          Color(0xffDDDDDD),
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(50),
+                                                      ),
+                                                    ),
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        justSignedUp = false;
+                                                      });
+                                                    },
+                                                    buttonText: "Skip"),
+                                              ),
+                                              SizedBox(width: 12),
+                                              Expanded(
+                                                child: MainButtonWidget(
+                                                  buttonStyle:
+                                                      ElevatedButton.styleFrom(
+                                                    minimumSize: Size(
+                                                        double.infinity, 61),
+                                                    backgroundColor:
+                                                        Color(0xff3AA2ED),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              50),
+                                                    ),
+                                                  ),
+                                                  onPressed: () {},
+                                                  buttonText: "Add Address",
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                        // Add content for the second page here
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     )
