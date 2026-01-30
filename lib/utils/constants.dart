@@ -34,3 +34,8 @@ var appBarTextStyle = TextStyle(
   fontSize: 17,
   fontWeight: FontWeight.w600,
 );
+
+var someTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
+);

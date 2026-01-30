@@ -1,3 +1,4 @@
+import 'package:fashion_app/widgets/add_address_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/constants.dart';
@@ -122,48 +123,7 @@ class ManageAccountScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(34),
                     ),
                     padding: const EdgeInsets.all(15),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Pamuruyan, Kec. Cibadak, Kabupaten Sukabumi, Jawa Barat 43351",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12,
-                            // height: 1.3,
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          height: 38,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(34),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "assets/icons/icon_home_white.png",
-                                width: 25,
-                                height: 25,
-                              ),
-                              SizedBox(width: 8),
-                              Text(
-                                "Home",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                    child: AddAddressWidget(),
                   ),
                 )
               ],

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Golos',
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeNavScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
