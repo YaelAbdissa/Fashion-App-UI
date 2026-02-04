@@ -46,9 +46,7 @@ Fashion App is a full-featured mobile shopping application built with Flutter th
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
 
-This project is available for personal and commercial use.
 
 ## Support
 
